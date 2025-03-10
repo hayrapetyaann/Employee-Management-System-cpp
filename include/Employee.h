@@ -23,7 +23,7 @@ public:
     EmployeeStatus getEmployeeStatus() const;
     double getRate() const;
     virtual ~Employee();
-private:
+protected:
     std::string m_employeeID;
     std::string m_name;
     double m_baseSalary;
