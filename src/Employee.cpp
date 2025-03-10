@@ -1,5 +1,6 @@
 #include "include/Employee.h"
 #include <iostream>
+#include "include/EmployeeStatus.h"
 
 Employee::Employee(std::string id, std::string name, double baseSalary, Role role, EmploymentType employmentType) 
             : m_employeeID(id), m_name(name), m_baseSalary(baseSalary), m_role(role), m_employmentType(employmentType), m_rate(1.0) {}
@@ -12,13 +13,8 @@ double Employee::calculateSalary() {
 }
 
 void Employee::promote() {
-    if (m_role == Role::Intern) {
-        m_role = Role::Junior;
-    } else if (m_role == Role::Junior) {
-        m_role = Role::Middle;
-    } else if (m_role == Role::Middle) {
-        m_role = Role::Senior;
-    }
+    m_role++;
+    m_rate = getRateForRole(m_role);
 }
 
 void Employee::displayDetails() const {
