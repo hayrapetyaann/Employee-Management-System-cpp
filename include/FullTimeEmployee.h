@@ -10,6 +10,9 @@ public:
     double calculateSalary() override; 
     void promote() override;
     void displayDetails() const override; 
+    double getHealthInsuranceBenefits() const;
+    double getGymMembershipBenefits() const;
+    double getPaidTimeOffBenefits() const;
 private:
     double m_healthInsuranceBenefits;
     double m_gymMembershipBenefits;
