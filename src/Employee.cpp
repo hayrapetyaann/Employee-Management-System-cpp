@@ -12,7 +12,13 @@ double Employee::calculateSalary() {
 }
 
 void Employee::promote() {
-
+    if (m_role == Role::Intern) {
+        m_role = Role::Junior;
+    } else if (m_role == Role::Junior) {
+        m_role = Role::Middle;
+    } else if (m_role == Role::Middle) {
+        m_role = Role::Senior;
+    }
 }
 
 void Employee::displayDetails() const {
